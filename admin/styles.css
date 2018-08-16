@@ -1,9 +1,95 @@
-.container-fluid {
-  background-color: #2A3132;
-  height: 3rem;
+html, body, .container-fluid {
+  height: 100%;
+  width: 100%;
 }
 
-.row {
-    background-color: #FF9232;
-    height: 2.7rem;
+.container-fluid {
+  padding-right: 3px;
+  padding-left: 3px;
+}
+/* nav */
+.navi {
+  background-color: #505160;
+  height: 4rem;
+  width: 100%;
+}
+
+.logo {
+  background-color: #90AFC5;
+  width: 6rem;
+  height: 4rem;
+  float: left;
+}
+
+.photo {
+  background-color: #90AFC5;
+  width: 3.7rem;
+  height: 3.7rem;
+  border-radius: 50%;
+  float: right;
+  margin-right: 10px;
+}
+/* main */
+.tab {
+  float: left;
+  background-color: #68829E;
+  width: 16%;
+  height: 100%;
+}
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 20px 15px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #336B87;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #336B87;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  width: 70%;
+  border-left: none;
+  height: 100%;
+}
+
+/* login */
+.signin-container {
+  margin-top: 30%
+}
+.signin-box {
+  max-width: 350px;
+}
+.signin-card {
+  padding: 40px 0px 20px;
+  background-color: #f4f4f4;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+}
+.text-muted {
+  padding-top: 8px;
+}
+.login-logo {
+  background-color: #90AFC5;
+  width: 6rem;
+  height: 5rem;
+}
+.signin-btn {
+  color: #336B87;
+  width: 100%;
 }
