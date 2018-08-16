@@ -10,6 +10,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(hbs)$/, 
+        use: [
+          {
+            loader: 'handlebars-loader'
+          }
+        ]    
+      },
+      {
         test: /\.(scss)$/,
         use: [
           {

@@ -1,0 +1,9 @@
+.container-fluid {
+  background-color: #2A3132;
+  height: 3rem;
+}
+
+.row {
+    background-color: #FF9232;
+    height: 2.7rem;
+}
