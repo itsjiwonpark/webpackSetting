@@ -1,0 +1,166 @@
+.list_main {
+width: 85%;
+position: relative;
+left: 3%;
+margin: 30px;
+}
+
+.waiting-lists {
+  padding-left: 15%;
+}
+
+.waiting-list {
+  display: flex;
+  align-items: flex-start; 
+}
+
+.waiting-list .fa-user-circle-o {
+  margin-right: 20px;
+}
+
+.waiting-list_card {
+  width: 900px;
+  padding: 18px 20px;
+  position: relative;
+}
+
+.waiting-list_boxs{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.waiting-list_box{
+  margin-right: 9px;
+  padding: 5px 11px;
+  font-size: 12px;
+  border: 0.5px solid #c2c0c0;
+  color: #48473D;
+  border-radius: 2px;
+}
+
+.first.waiting-list_box{
+  margin-right: 9px;
+  padding: 5px 11px;
+  font-size: 12px;
+  background-color:#6C829B;
+  border: 0.5px solid #6C829B;
+  color:white;
+  border-radius: 2px;
+}
+
+.number.waiting-list_box {
+  margin-right: 9px;
+  padding: 5px 11px;
+  font-size: 12px;
+  border: 0.5px solid #6C829B;
+  color:white;
+  border-radius: 2px;
+}
+
+.waiting-list_info {
+  margin: 40px 0px 30px 0px;
+  color: #48473D;
+}
+
+.waiting-list_info p {
+  margin-bottom: 10px;
+}
+
+.waiting-list_info button {
+  margin : 0px 10px;
+ font-size: 15px;
+ padding: 2px 10px;
+}
+
+.waiting-list_button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.waiting-list_button-container button {
+  margin: 3px;
+  font-size: 15px;
+ padding: 2px 10px;
+}
+
+.number.modal-title,
+.number.modal-header {
+  margin-left: 60px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.number.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.postponed.modal-body {
+  font-size: 20px;
+  text-align: center;
+  margin: 30px;
+}
+
+.postponed.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.postponed.modal.fade{
+  position: fixed;
+  left: 10%;
+  top: 28%;
+}
+
+.call_modal.modal-body {
+  font-size: 20px;
+  text-align: center;
+  margin: 30px;
+}
+
+.call_modal.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.call_modal.modal.fade{
+  position: fixed;
+  left: 10%;
+  top: 28%;
+}
+
+.no-show_modal.modal-body {
+  font-size: 20px;
+  text-align: center;
+  margin: 30px;
+}
+
+.no-show_modal.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.no-show_modal.modal.fade{
+  position: fixed;
+  left: 10%;
+  top: 28%;
+}
+
+.enter_modal.modal-body {
+  font-size: 20px;
+  text-align: center;
+  margin: 30px;
+}
+
+.enter_modal.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.enter_modal.modal.fade{
+  position: fixed;
+  left: 10%;
+  top: 28%;
+}

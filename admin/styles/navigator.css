@@ -1,45 +1,45 @@
-html, body, .container-fluid {
-  height: 100%;
-  width: 100%;
-}
 
-.container-fluid {
-  padding-right: 3px;
-  padding-left: 3px;
-}
 /* nav */
 .navi {
   background-color: #505160;
   height: 4rem;
   width: 100%;
+  position: relative;
 }
 
-.logo {
-  background-color: #90AFC5;
-  width: 6rem;
-  height: 4rem;
-  float: left;
+.log-out.btn {
+  background-color: white;
 }
 
-.photo {
-  background-color: #90AFC5;
-  width: 3.7rem;
-  height: 3.7rem;
-  border-radius: 50%;
-  float: right;
-  margin-right: 10px;
+.navi h3 {
+  padding: 15px;
+  color: white;
+}
+
+.navi_log-out { 
+  right: 0px;
+  top: 0px;
+  padding: 20px;
+  position: absolute;
 }
 /* main */
 .tab {
-  float: left;
+  position: fixed;
+  left: 0px;
   background-color: #68829E;
   width: 16%;
   height: 100%;
 }
+
+.tablinks i {
+  color: white;
+  margin: 0px 10px;
+}
+
 .tab button {
   display: block;
   background-color: inherit;
-  color: black;
+  color:white;
   padding: 20px 15px;
   width: 100%;
   border: none;

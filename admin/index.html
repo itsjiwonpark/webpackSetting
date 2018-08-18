@@ -3,23 +3,195 @@
   <head>
     <meta charset="utf8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <title>admin page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-      <div class='container-fluid'>
           <div class="navi">
-              <div class='logo'>Logo</div>
-              <div class='photo'>Pic</div>
+            <h3>Logo</h3>
+              <div class='navi_log-out'>
+                <button type="button" class="log-out btn btn-outline-primary btn-sm">
+                  Log Out
+                </button>
+              </div>
           </div>
       
           <div class="tab">
-              <button class="tablinks" onclick="openCity(event, 'London')">웨이팅 관리</button>
-              <button class="tablinks" onclick="openCity(event, 'Paris')">예약 관리</button>
-              <button class="tablinks" onclick="openCity(event, 'Tokyo')">통 계</button>
-              <button class="tablinks" onclick="openCity(event, 'Tokyo')">설 정</button>
+              <button class="tablinks" onclick="openCity(event, 'London')">
+                <i class="fa fa-address-book"></i>  
+                웨이팅 관리
+              </button>
+              <button class="tablinks" onclick="openCity(event, 'Paris')">
+                <i class="fa fa-bookmark"></i>
+                예약 관리
+              </button>
+              <button class="tablinks" onclick="openCity(event, 'Tokyo')">
+                <i class="fa fa-industry"></i>
+                통 계
+              </button>
+              <button class="tablinks" onclick="openCity(event, 'Tokyo')">
+                <i class="fa fa-cog"></i>
+                설 정</button>
           </div>
+
+          <div class="list_main">
+            <ul class="waiting-lists">
+              <li class="waiting-list">
+                <i class="fa fa-user-circle-o" style="font-size:30px"></i>
+                <div class="card waiting-list_card">
+                  <div class="waiting-list_boxs">
+                      <div class="first waiting-list_box">
+                          웨이팅 #31
+                      </div>
+                      <div class="number waiting-list_box btn btn-primary" data-toggle="modal" data-target="#number_modal">
+                          <i class="fa fa-users"></i>
+                          1명
+                      </div>
+                      <div class="waiting-list_box">
+                          <i class="fa fa-mobile"></i>
+                          010-****-****
+                      </div>
+                      <div class="waiting-list_box">
+                          <i class="fa fa-hourglass-half"></i>
+                          2분 웨이팅 중
+                      </div>
+                  </div>
+                  <div class="waiting-list_info">
+                    <p>1번째 방문</p>
+                    <p>
+                      <i class="fa fa-users"></i>
+                      현재 대기인원 1명
+                      <button type="button" class="btn btn-primary btn-outline-primary" data-toggle="modal" data-target="#call_modal">호출</button>
+                    </p>
+                  </div>
+                  <div class="waiting-list_button-container">
+                      <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#enter_modal">입장</button>
+                      <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#no-show_modal">없음</button>
+                      <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#postponed-button">대기</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="number modal fade" id="number_modal" tabindex="-1" role="dialog" aria-labelledby="number_modal" aria-hidden="true">
+              <div class="number modal-dialog modal-dialog-centered" role="document">
+                  <div class="number modal-content">
+                    <div class="number modal-header" >
+                      <h5 class="number modal-title" id="number_modal" style="text-align: center">입장 인원을 바꾸시겠습니까?
+                      </h5>
+                      <button type="button" class="number close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="number modal-body" style="text-align: center">
+                      <input type="number" style="text-align: center; margin:20px 0px">
+                    </div>
+                    <div class="number modal-footer">
+                      <button type="button" class="number btn btn-secondary" data-dismiss="modal">
+                        닫기
+                      </button>
+                      <button type="button" class="number btn btn-primary" onclick="hello()" data-dismiss="modal">
+                        수정
+                      </button>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+            <div class="postponed modal fade" id="postponed-button" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="postponed modal-dialog" role="document">
+                  <div class="postponed modal-content">
+                    <div class="postponed modal-header">
+                      <h5 class="postponed modal-title" id="exampleModalLabel" style="margin-left:220px">	
+                        <i class="fa fa-exclamation-circle" style="font-size:40px; color:#F7C244";></i>
+                      </h5>
+                      <button type="button" class="postponed close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="postponed modal-body">
+                      대기 상태로 변경하시겠습니까?
+                    </div>
+                    <div class="postponed modal-footer">
+                      <button type="button" class="postponed btn btn-secondary" data-dismiss="modal">취소</button>
+                    <button type="button" class="postponed btn btn-warning" style="color:white" onclick="waiting()" data-dismiss="modal">네, 변경할게요</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="call_modal modal fade" id="call_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="call_modal modal-dialog" role="document">
+                  <div class="call_modal modal-content">
+                    <div class="call_modal modal-header">
+                      <h5 class="call_modal modal-title" id="exampleModalLabel" style="margin-left:220px">	
+                        <i class="fa fa-exclamation-circle" style="font-size:40px; color:#F7C244";></i>
+                      </h5>
+                      <button type="button" class="call_modal close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="call_modal modal-body">
+                      지금 호출하시겠습니까?
+                    </div>
+                    <div class="call_modal modal-footer">
+                      <button type="button" class="call_modal btn btn-secondary" data-dismiss="modal">취소</button>
+                    <button type="button" class="call_modal btn btn-primary" style="color:white" data-dismiss="modal">확인</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+
+              <div class="no-show_modal modal fade" id="no-show_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="no-show_modal modal-dialog" role="document">
+                  <div class="no-show_modal modal-content">
+                    <div class="no-show_modal modal-header">
+                      <h5 class="no-show_modal modal-title" id="exampleModalLabel" style="margin-left:220px">	
+                        <i class="fa fa-exclamation-circle" style="font-size:40px; color:#F7C244";></i>
+                      </h5>
+                      <button type="button" class="no-show_modal close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="no-show_modal modal-body">
+                      없음으로 변경하시겠습니까?
+                    </div>
+                    <div class="no-show_modal modal-footer">
+                      <button type="button" class="no-show_modal btn btn-secondary" data-dismiss="modal">취소</button>
+                    <button type="button" class="no-show_modal btn btn-primary" style="color:white" data-dismiss="modal">확인</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="enter_modal modal fade" id="enter_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="enter_modal modal-dialog" role="document">
+                  <div class="enter_modal modal-content">
+                    <div class="enter_modal modal-header">
+                      <h5 class="enter_modal modal-title" id="exampleModalLabel" style="margin-left:220px">	
+                        <i class="fa fa-exclamation-circle" style="font-size:40px; color:#F7C244";></i>
+                      </h5>
+                      <button type="button" class="enter_modal close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="enter_modal modal-body">
+                      지금 입장시키시겠습니까?
+                    </div>
+                    <div class="enter_modal modal-footer">
+                      <button type="button" class="enter_modal btn btn-secondary" data-dismiss="modal">취소</button>
+                    <button type="button" class="enter_modal btn btn-primary" style="color:white" data-dismiss="modal">확인</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
       <!-- </div>
     <div class='container signin-container'>
       <div class='row'>
@@ -47,6 +219,25 @@
 
 
     <script src="dist/bundle.js"></script>
+    <script>
+         var hello = function(){
+           var text = $(".number.modal-body input").val()
+           $(".number.waiting-list_box.btn.btn-primary").html(`<i class="fa fa-users"></i> ${text}명`)
+          console.log(text)
+        }
+
+        var waiting = function(){
+          $(".waiting-list, .waiting-list_card").css("background-color", "yellow");
+        }
+      
+// <!-- 
+//     $(document).ready(function(){
+//       $('.number.waiting-list_box').click(function(){
+//         console.log('hello')
+//         $("<span>Hello World!</span>").appendTo("body");
+//       })
+//     }); -->
+    </script>
   </body>
 </html>
 
